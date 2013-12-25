@@ -1,0 +1,15 @@
+        - name:         <%= @page_title %>
+          <%- if @image -%>
+          image:        <%= @image %>
+          <%- end -%>
+          items:
+              <%- @items.each do |item| -%>
+              - name:       <%= item['name'] %>
+                jobs:
+                    <%- item['jobs'].each do |job| -%>
+                    - name:     <%= job['name'] %>
+                    <%- if job['trigger'] -%>
+                      trigger:  <%= job['trigger'] %>
+                    <%- end -%>
+                    <%- end -%>
+              <%- end -%>

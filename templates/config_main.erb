@@ -1,0 +1,23 @@
+#############################################################
+#                                                           #
+# This file is managed by Puppet using the Ganbatte module. #
+#                                                           #
+#############################################################
+site:
+    name:               <%= scope.lookupvar('ganbatte::site_name') %>
+    description:        <%= scope.lookupvar('ganbatte::site_description') %>
+    author:             <%= scope.lookupvar('ganbatte::site_author') %>
+    keywords:           <%= scope.lookupvar('ganbatte::site_keywords') %>
+
+jenkins:
+    location:           <%= scope.lookupvar('ganbatte::jenkins_location') %>
+    api_user:           <%= scope.lookupvar('ganbatte::jenkins_api_user') %>
+    api_token:          <%= scope.lookupvar('ganbatte::jenkins_api_token') %>
+    cache_timer:        <%= scope.lookupvar('ganbatte::jenkins_cache_timer') %>
+
+dashboard:
+    refresh_interval:   <%= scope.lookupvar('ganbatte::dashboard_refresh_interval') %>
+    progress_interval:  <%= scope.lookupvar('ganbatte::dashboard_progress_interval') %>
+
+monitoring:
+    pages:
