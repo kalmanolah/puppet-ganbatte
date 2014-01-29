@@ -11,7 +11,6 @@
 # Copyright 2013 Kalman Olah, unless otherwise noted.
 #
 class ganbatte::params {
-
   $apache_user = $::osfamily ? {
     'Debian'  => 'www-data',
     'FreeBSD' => 'www',
@@ -27,5 +26,4 @@ class ganbatte::params {
 
   $dashboard_refresh_interval  = 15
   $dashboard_progress_interval = 15
-
 }

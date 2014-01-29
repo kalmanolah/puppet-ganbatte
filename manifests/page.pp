@@ -16,16 +16,14 @@ define ganbatte::page (
   $image     = undef,
   $order     = 10,
 ) {
-
   $page_title = $page_name ? {
     undef   => $name,
     default => $page_name,
   }
 
   concat::fragment { "ganbatte_config_fragment_page_$name":
-    target  => $::ganbatte::config_file,
+    target  => $ganbatte::config_file,
     content => template('ganbatte/config_page.erb'),
     order   => $order,
   }
-
 }
