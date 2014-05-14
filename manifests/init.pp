@@ -26,18 +26,18 @@ class ganbatte (
 ) {
   include ganbatte::params
 
-  $config_file = "${ganbatte::document_root}/config/config.yml"
+  $config_file = "${document_root}/config/config.yml"
 
   # Make sure certain dirs exist and are writeable
   file { [
-    $ganbatte::document_root,
-    "${ganbatte::document_root}/config",
-    "${ganbatte::document_root}/cache",
-    "${ganbatte::document_root}/cache/twig",
-    "${ganbatte::document_root}/cache/jenkins"]:
+    $document_root,
+    "${document_root}/config",
+    "${document_root}/cache",
+    "${document_root}/cache/twig",
+    "${document_root}/cache/jenkins"]:
     ensure => 'directory',
-    owner  => $ganbatte::apache_user,
-    group  => $ganbatte::apache_user,
+    owner  => $apache_user,
+    group  => $apache_user,
     mode   => '0755',
   }
 
