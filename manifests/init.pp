@@ -23,9 +23,7 @@ class ganbatte (
   $site_description            = $ganbatte::params::site_description,
   $site_author                 = $ganbatte::params::site_author,
   $site_keywords               = $ganbatte::params::site_keywords,
-) {
-  include ganbatte::params
-
+) inherits ganbatte::params {
   $config_file = "${document_root}/config/config.yml"
 
   # Make sure certain dirs exist and are writeable
