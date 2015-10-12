@@ -21,9 +21,10 @@ define ganbatte::page (
     default => $page_name,
   }
 
-  concat::fragment { "ganbatte_config_fragment_page_$name":
-    target  => $ganbatte::config_file,
+  concat::fragment { "ganbatte_config_fragment_page_${name}":
+    target  => $::ganbatte::config_file,
     content => template('ganbatte/config_page.erb'),
     order   => $order,
   }
+
 }
